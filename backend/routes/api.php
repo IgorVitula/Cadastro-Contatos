@@ -25,6 +25,6 @@ Route::namespace('App\Http\Controllers\Api') ->group(function(){
     Route::get('/contato', 'ContatoController@index');
     Route::get('/contato/{id}','ContatoController@show');
     Route::post('/contato','ContatoController@save');
-    Route::put('/contato/{id}','ProdutoController@update');
-    Route::delete('/contato/{id}','ProdutoController@delete');
+    Route::put('/contato/{id}','ContatoController@update');
+    Route::delete('/contato/{id}','ContatoController@delete');
 });

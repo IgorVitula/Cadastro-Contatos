@@ -23,14 +23,13 @@ class ContatoController extends Controller
     }
 
     public function save(Request $request){
-
         $data = $request -> all();
         $contato = $this->contato->create($data);
 
         return response()->json($contato);
     }
 
-    public function update(Request $request,$id){
+    public function update(Request $request, $id){
         $data = $request->all();
         try{
             $contato = $this->contato->findOrFail($id);
@@ -43,7 +42,7 @@ class ContatoController extends Controller
 
     public function delete($id){
         try{
-            $contato = $this->produto->findOrFail($id); //Encontrar ou não
+            $contato = $this->contato->findOrFail($id); //Encontrar ou não
             $contato->delete();
             return response()->json(['data' =>['msg' => 'Removido com sucesso'], 200]);
         }catch(Exception $e){
